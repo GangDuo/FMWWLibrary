@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3102E484-51FD-4218-9A4D-1C0DD9A9E5C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FMWW</RootNamespace>
+    <AssemblyName>FMWW</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Patterns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Patterns.1.0.0\lib\Patterns.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Text, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f684baf280447d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Text.1.0.0\lib\Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\Between.cs" />
+    <Compile Include="Core\CenterType.cs" />
+    <Compile Include="Core\CenterTypeExt.cs" />
+    <Compile Include="Core\Mobile\MainMenuFactory.cs" />
+    <Compile Include="Entity\Factory\UserAccount.cs" />
+    <Compile Include="Entity\UserAccount.cs" />
+    <Compile Include="Http\AbstractUploader.cs" />
+    <Compile Include="Http\Client.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\SignedInEventArgs.cs" />
+    <Compile Include="Component\SignedInEventHandler.cs" />
+    <Compile Include="Entity\Distribute.cs" />
+    <Compile Include="Entity\DistributeForExport.cs" />
+    <Compile Include="Entity\Shelf.cs" />
+    <Compile Include="Core\AbstractAuthentication.cs" />
+    <Compile Include="Core\Helpers\Ajax.cs" />
+    <Compile Include="Core\PC\Authentication.cs" />
+    <Compile Include="Core\ImportablePage.cs" />
+    <Compile Include="Http\IPage.cs" />
+    <Compile Include="Core\Mobile\Authentication.cs" />
+    <Compile Include="Http\NopUploader.cs" />
+    <Compile Include="Http\Page.cs" />
+    <Compile Include="Core\Polling.cs" />
+    <Compile Include="Core\Script\Parser.cs" />
+    <Compile Include="Http\HTMLParser.cs" />
+    <Compile Include="Http\Method.cs" />
+    <Compile Include="Core\Helpers\UrlBuilder.cs" />
+    <Compile Include="Entity\Item.cs" />
+    <Compile Include="Core\MainMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\Stock.cs" />
+    <Compile Include="Entity\Supplier.cs" />
+    <Compile Include="Utility\UnixEpochTime.cs" />
+    <Compile Include="Utility\Collection\Slicer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
