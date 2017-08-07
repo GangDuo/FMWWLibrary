@@ -68,6 +68,21 @@ namespace FMWW.Core.PC
             return form;
         }
 
+        public bool CanSignIn(FMWW.Http.Client client, string username, string password, string person, string personPassword)
+        {
+            var canSignIn = true;
+            try
+            {
+                SignIn(client, username, password, person, personPassword);
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                canSignIn = false;
+            }
+            return canSignIn;
+        }
+
         public void SignIn(FMWW.Http.Client client, string username, string password, string person, string personPassword)
         {
             //            this.Headers.Add("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
