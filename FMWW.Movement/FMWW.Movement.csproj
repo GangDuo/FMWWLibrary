@@ -43,6 +43,9 @@
     <Compile Include="Movement\MovementExport\Ref\Context.cs" />
     <Compile Include="Movement\MovementExport\Ref\MainMenuFactory.cs" />
     <Compile Include="Movement\MovementExport\Ref\Page.cs" />
+    <Compile Include="Movement\PurchasingExpenses\Ref\Context.cs" />
+    <Compile Include="Movement\PurchasingExpenses\Ref\MainMenuFactory.cs" />
+    <Compile Include="Movement\PurchasingExpenses\Ref\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
