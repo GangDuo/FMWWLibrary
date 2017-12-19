@@ -55,6 +55,7 @@
     <Compile Include="Component\CountSuppliersCompletedEventHandler.cs" />
     <Compile Include="Component\ExportSupplierCompletedEventArgs.cs" />
     <Compile Include="Component\ExportSupplierCompletedEventHandler.cs" />
+    <Compile Include="Image\Ref\Page.cs" />
     <Compile Include="PriceTag\New\MainMenuFactory.cs" />
     <Compile Include="PriceTag\New\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
