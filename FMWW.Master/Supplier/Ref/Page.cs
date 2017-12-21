@@ -12,7 +12,8 @@ using System.Text.RegularExpressions;
 namespace FMWW.Master.Supplier.Ref
 {
     // ﾏｽﾀ[各種ﾏｽﾀ] -> 仕入先ﾏｽﾀ -> 照会
-    public class Page : FMWW.Http.Page
+    // SupplierCollection
+    public class Page : FMWW.Http.Page, IEnumerable<Dictionary<string, string>>
     {
         private Dictionary<string, string> Supplier;
 
@@ -43,58 +44,8 @@ namespace FMWW.Master.Supplier.Ref
             throw new NotImplementedException();
         }
 
-        private static Dictionary<string, string> Parse(string html)
+        public IEnumerator<Dictionary<string, string>> GetEnumerator()
         {
-            var supplier = new Dictionary<string, string>();
-            var parser = new FMWW.Http.HTMLParser(html);
-            mshtml.HTMLDocument document = parser.Document;
-            mshtml.IHTMLElementCollection inputs = document.getElementsByTagName("input");
-            foreach (mshtml.IHTMLElement elm in inputs)
-            {
-                var title = elm.getAttribute("title") ?? "";
-                var id = elm.id ?? "";
-                if ((title.Length == 0) || (id.Length == 0))
-                {
-                    continue;
-                }
-                var value = elm.getAttribute("value");
-                supplier.Add(title, value);
-                Trace.WriteLine(String.Format("{0} {1} {2}", elm.id, title, value));
-
-                try
-                {
-                    var input = elm as mshtml.IHTMLInputElement;
-                    var suffix = ":select";
-                    var t = title + suffix;
-                    var v = "";
-                    mshtml.IHTMLElementCollection spans = document.getElementById(elm.id + suffix).children;
-                    foreach (mshtml.IHTMLElement span in spans)
-                    {
-                        if (span.getAttribute("value") == input.value)
-                        {
-                            v = span.getAttribute("text");
-                            continue;
-                        }
-                    }
-                    supplier.Add(t, v);
-                    Trace.WriteLine(String.Format("{0} {1} {2}", elm.id + suffix, t, v));
-                }
-                catch (Exception e)
-                {
-                    Trace.WriteLine(e.Message);
-                }
-            }
-            mshtml.IHTMLElement remark = document.getElementById("remark");
-            supplier.Add("備考", remark.innerText);
-            return supplier;
-        }
-
-        public override string Csv()
-        {
-            var suppliers = new List<Dictionary<string, string>>();
-            SignIn();
-            this._Client.UploadValues(FMWW.Core.MainMenu.Url, FMWW.Http.Method.Post, MainMenuFactory.CreateInstance().Translate());
-
             var address = FMWW.Core.Helpers.UrlBuilder.Build("/JMODE_ASP/faces/contents/M040_SUPPLIER/M040_SELECT.jsp");
             var data = PageContext.Translate();
             uint row = 1;
@@ -115,8 +66,7 @@ namespace FMWW.Master.Supplier.Ref
                 ++clickedRow;
 
                 // 仕入先情報保存
-                var supplier = Parse(Encoding.UTF8.GetString(resData));
-                suppliers.Add(supplier);
+                var supplier = (new Detail.ReplicaPage(Encoding.UTF8.GetString(resData))).Supplier;
                 foreach (var key in supplier.Keys)
                 {
                     Trace.WriteLine(String.Format("{0}: {1}", key, supplier[key]));
@@ -131,12 +81,31 @@ namespace FMWW.Master.Supplier.Ref
                     {"form1:isAjaxMode", ""},
                     {"form1",            "form1"},
                 };
+                yield return supplier;
             }
+        }
 
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
+        public override string Csv()
+        {
+            var suppliers = new List<Dictionary<string, string>>();
+            SignIn();
+            this._Client.UploadValues(FMWW.Core.MainMenu.Url, FMWW.Http.Method.Post, MainMenuFactory.CreateInstance().Translate());
+
+            foreach (var supplier in this)
+            {
+                suppliers.Add(supplier);
+            }
             return base.Csv();
         }
 
+        //
+        // 戻り値:
+        //     件数。
         private uint LoadSummary(Uri address, NameValueCollection data)
         {
             byte[] resData = this._Client.UploadValues(address, data);

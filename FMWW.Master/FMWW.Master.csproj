@@ -62,6 +62,8 @@
     <Compile Include="Shelf\Ref\MainMenuFactory.cs" />
     <Compile Include="Shelf\Ref\Page.cs" />
     <Compile Include="Supplier\Ref\Context.cs" />
+    <Compile Include="Supplier\Ref\Detail\PageViewModel.cs" />
+    <Compile Include="Supplier\Ref\Detail\ReplicaPage.cs" />
     <Compile Include="Supplier\Ref\MainMenuFactory.cs" />
     <Compile Include="Supplier\Ref\Page.cs" />
   </ItemGroup>
