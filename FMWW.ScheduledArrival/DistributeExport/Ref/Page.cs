@@ -58,7 +58,7 @@ namespace FMWW.ScheduledArrival.DistributeExport.Ref
                 };
 
             this._Client.UploadValuesAsync(
-                new UriBuilder(SchemeName, FMWW.Core.AbstractAuthentication.HostName) { Path = "/JMODE_ASP/faces/contents/X024_160_DISTRIBUTE_EXPORT/X024_SELECT.jsp" }.Uri,
+                new UriBuilder(SchemeName, FMWW.Core.Config.Instance.HostName) { Path = "/JMODE_ASP/faces/contents/X024_160_DISTRIBUTE_EXPORT/X024_SELECT.jsp" }.Uri,
                 FMWW.Http.Method.Post, context.Translate(true));
             this._Client.UploadValuesCompleted += onUploadValuesCompleted;
         }

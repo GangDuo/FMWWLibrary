@@ -10,7 +10,7 @@ namespace FMWW.Core.Helpers
     {
         public static Uri Build(string absPath)
         {
-            var ub = new UriBuilder(Uri.UriSchemeHttps, Core.AbstractAuthentication.HostName) { Path = absPath };
+            var ub = new UriBuilder(Uri.UriSchemeHttps, Core.Config.Instance.HostName) { Path = absPath };
             return ub.Uri;
         }
 
@@ -21,7 +21,7 @@ namespace FMWW.Core.Helpers
 
         public static Uri GetImageUrlBy(string productCode)
         {
-            var ub = new UriBuilder(Uri.UriSchemeHttps, Core.AbstractAuthentication.HostName)
+            var ub = new UriBuilder(Uri.UriSchemeHttps, Core.Config.Instance.HostName)
             {
                 Path = "/JMODE_ASP/faces/contents/imageServlet",
                 Query = String.Format(@"style={0}&id=0&dir=system", productCode)

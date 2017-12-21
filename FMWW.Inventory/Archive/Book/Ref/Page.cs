@@ -90,7 +90,7 @@ namespace FMWW.Inventory.Archive.Book.Ref
             //                ""))),
             //    filter.Date.ToString("d"));
             var ms = new MemoryStream();
-            var ub = new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.AbstractAuthentication.HostName)
+            var ub = new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.Config.Instance.HostName)
             {
                 Path = "/JMODE_ASP/Export",
                 Query = "mode=download&cache=" + FMWW.Utility.UnixEpochTime.now()

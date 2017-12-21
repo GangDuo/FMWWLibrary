@@ -60,6 +60,7 @@
     <Compile Include="Component\Between.cs" />
     <Compile Include="Core\CenterType.cs" />
     <Compile Include="Core\CenterTypeExt.cs" />
+    <Compile Include="Core\Config.cs" />
     <Compile Include="Core\Mobile\MainMenuFactory.cs" />
     <Compile Include="Entity\Factory\UserAccount.cs" />
     <Compile Include="Entity\UserAccount.cs" />

@@ -11,14 +11,14 @@ namespace Core.UnitTest
         {
 
             Assert.AreEqual(
-                new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.AbstractAuthentication.HostName)
+                new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.Config.Instance.HostName)
                 {
                     Path = "/JMODE_ASP/Import"
                 }.ToString(),
                 FMWW.Core.Helpers.UrlBuilder.Build("/JMODE_ASP/Import").ToString());
             
             Assert.AreEqual(
-                new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.AbstractAuthentication.HostName)
+                new UriBuilder(Uri.UriSchemeHttps, FMWW.Core.Config.Instance.HostName)
                 {
                     Path = "/JMODE_ASP/faces/contents/index.jsp"
                 }.ToString(),
