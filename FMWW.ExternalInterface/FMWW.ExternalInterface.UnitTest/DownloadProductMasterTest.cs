@@ -70,5 +70,20 @@ namespace FMWW.ExternalInterface.UnitTest
             Verify0000001002560(filename);
             System.IO.File.Delete(filename);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void CanNotExportOverLimit()
+        {
+            var page = new FMWW.ExternalInterface.Products.Ref.Page()
+            {
+                UserAccount = UserAccount,
+                PageContext = new FMWW.ExternalInterface.Products.Ref.Context()
+                {
+                    ItemCode = "221"
+                }
+            };
+            var binary = page.Excel();
+        }
     }
 }

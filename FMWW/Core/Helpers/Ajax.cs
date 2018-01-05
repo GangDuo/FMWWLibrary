@@ -25,6 +25,16 @@ namespace FMWW.Core.Helpers
             return Regex.IsMatch(text, @"setError\([^\)]*\);", RegexOptions.IgnoreCase);
         }
 
+        public static string SnipError(string text)
+        {
+            var m = Regex.Match(text, @"setError\(([^\)]*)\);");
+            if (m.Groups.Count < 2)
+            {
+                return String.Empty;
+            }
+            return m.Groups[1].Value.Trim(new char[] { '"', '\'' });
+        }
+
         public static NameValueCollection CreateAjaxQuery()
         {
             return new NameValueCollection()
@@ -45,7 +55,7 @@ namespace FMWW.Core.Helpers
                 text = Encoding.UTF8.GetString(resData);
                 if (HasError(text))
                 {
-                    throw new Exception();
+                    throw new Exception(SnipError(text));
                 }
             }
         }
