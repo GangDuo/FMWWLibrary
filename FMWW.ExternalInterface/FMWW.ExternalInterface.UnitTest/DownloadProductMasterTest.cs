@@ -80,7 +80,7 @@ namespace FMWW.ExternalInterface.UnitTest
                 UserAccount = UserAccount,
                 PageContext = new FMWW.ExternalInterface.Products.Ref.Context()
                 {
-                    ItemCode = "221"
+                    LineCode = "01"
                 }
             };
             var binary = page.Excel();
