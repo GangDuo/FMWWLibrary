@@ -35,6 +35,10 @@
       <HintPath>..\packages\Patterns.1.0.0\lib\Patterns.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RevisionHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RevisionHistory.1.0.0\lib\RevisionHistory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,10 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RevisionHistory\RevisionHistory.csproj">
-      <Project>{8f4d6a0b-4af4-4b9a-a6c0-474c02ca9111}</Project>
-      <Name>RevisionHistory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FMWW\FMWW.csproj">
       <Project>{3102e484-51fd-4218-9a4d-1c0dd9a9e5c3}</Project>
       <Name>FMWW</Name>
