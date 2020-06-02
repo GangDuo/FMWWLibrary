@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.Movement.UnitTest", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.Mobility.UnitTest", "FMWW.Mobility\FMWW.Mobility.UnitTest\FMWW.Mobility.UnitTest.csproj", "{B4E30717-33BF-45B9-BFE8-3758F7589CF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.Profile", "FMWW.Profile\FMWW.Profile.csproj", "{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{B4E30717-33BF-45B9-BFE8-3758F7589CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E30717-33BF-45B9-BFE8-3758F7589CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E30717-33BF-45B9-BFE8-3758F7589CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
