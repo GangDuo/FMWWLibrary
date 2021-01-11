@@ -36,10 +36,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Patterns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Patterns.1.0.0\lib\Patterns.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -51,10 +47,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Text, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f684baf280447d8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Text.1.0.0\lib\Text.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Between.cs" />
@@ -95,9 +87,15 @@
     <Compile Include="Utility\Collection\Slicer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\lib\Patterns.Net\Patterns.csproj">
+      <Project>{a3b47d86-5085-4aa4-8000-f5b67dd9e8a3}</Project>
+      <Name>Patterns</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Text.Net\Text.csproj">
+      <Project>{0f6ba882-8777-47f4-a40a-5c8b3e8b1037}</Project>
+      <Name>Text</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -38,14 +38,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Text, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f684baf280447d8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Text.1.0.0\lib\Text.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Util, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31218171eb15cf58, processorArchitecture=MSIL">
-      <HintPath>..\packages\Util.1.0.0\lib\Util.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customers\AdditionalPoint\New\Context.cs" />
@@ -62,9 +54,14 @@
       <Project>{3102e484-51fd-4218-9a4d-1c0dd9a9e5c3}</Project>
       <Name>FMWW</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\lib\Text.Net\Text.csproj">
+      <Project>{0f6ba882-8777-47f4-a40a-5c8b3e8b1037}</Project>
+      <Name>Text</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\util-net\Util\Util.csproj">
+      <Project>{ed36a38e-94ba-481f-a0e7-c823bda9c059}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

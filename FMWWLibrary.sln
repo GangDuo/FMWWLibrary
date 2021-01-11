@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW", "FMWW\FMWW.csproj", "{3102E484-51FD-4218-9A4D-1C0DD9A9E5C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.ExternalInterface", "FMWW.ExternalInterface\FMWW.ExternalInterface.csproj", "{65608F1B-9358-4E2C-A770-4D3BCB2E1EFC}"
@@ -42,6 +44,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.Mobility.UnitTest", "FMWW.Mobility\FMWW.Mobility.UnitTest\FMWW.Mobility.UnitTest.csproj", "{B4E30717-33BF-45B9-BFE8-3758F7589CF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMWW.Profile", "FMWW.Profile\FMWW.Profile.csproj", "{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text", "lib\Text.Net\Text.csproj", "{0F6BA882-8777-47F4-A40A-5C8B3E8B1037}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns", "lib\Patterns.Net\Patterns.csproj", "{A3B47D86-5085-4AA4-8000-F5B67DD9E8A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "lib\util-net\Util\Util.csproj", "{ED36A38E-94BA-481F-A0E7-C823BDA9C059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,8 +141,23 @@ Global
 		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2DF6991-D7A9-4313-ADC5-549E0CFC87DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6BA882-8777-47F4-A40A-5C8B3E8B1037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6BA882-8777-47F4-A40A-5C8B3E8B1037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6BA882-8777-47F4-A40A-5C8B3E8B1037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6BA882-8777-47F4-A40A-5C8B3E8B1037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B47D86-5085-4AA4-8000-F5B67DD9E8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B47D86-5085-4AA4-8000-F5B67DD9E8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B47D86-5085-4AA4-8000-F5B67DD9E8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B47D86-5085-4AA4-8000-F5B67DD9E8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED36A38E-94BA-481F-A0E7-C823BDA9C059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED36A38E-94BA-481F-A0E7-C823BDA9C059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED36A38E-94BA-481F-A0E7-C823BDA9C059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED36A38E-94BA-481F-A0E7-C823BDA9C059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0330B7C5-1CF1-4E35-8B7A-1709962A7F1F}
 	EndGlobalSection
 EndGlobal

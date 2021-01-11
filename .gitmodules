@@ -1,0 +1,9 @@
+[submodule "lib/Text.Net"]
+	path = lib/Text.Net
+	url = https://github.com/GangDuo/Text.Net
+[submodule "lib/Patterns.Net"]
+	path = lib/Patterns.Net
+	url = https://github.com/GangDuo/Patterns.Net
+[submodule "lib/util-net"]
+	path = lib/util-net
+	url = https://github.com/GangDuo/util-net
