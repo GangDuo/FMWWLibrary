@@ -54,10 +54,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Util, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31218171eb15cf58, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Util.1.0.0\lib\Util.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="VBIDEApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=931cec8882205047, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetOffice.Core.1.7.3.0\lib\net40\VBIDEApi.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -84,6 +80,10 @@
     <ProjectReference Include="..\..\FMWW\FMWW.csproj">
       <Project>{3102e484-51fd-4218-9a4d-1c0dd9a9e5c3}</Project>
       <Name>FMWW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\util-net\Util\Util.csproj">
+      <Project>{ed36a38e-94ba-481f-a0e7-c823bda9c059}</Project>
+      <Name>Util</Name>
     </ProjectReference>
     <ProjectReference Include="..\FMWW.ExternalInterface.csproj">
       <Project>{65608f1b-9358-4e2c-a770-4d3bcb2e1efc}</Project>

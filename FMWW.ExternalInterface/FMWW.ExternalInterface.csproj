@@ -31,10 +31,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Patterns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Patterns.1.0.0\lib\Patterns.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="RevisionHistory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RevisionHistory.1.0.0\lib\RevisionHistory.dll</HintPath>
       <Private>True</Private>
@@ -46,10 +42,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Text, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f684baf280447d8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Text.1.0.0\lib\Text.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Inventory\New\MainMenuFactory.cs" />
