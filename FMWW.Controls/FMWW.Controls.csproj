@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE984EFE-A822-4223-8AB9-5F593121235E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FMWW.Controls</RootNamespace>
+    <AssemblyName>FMWW.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Distribute.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="FMWW\Master\Product\Alteration\Client.cs" />
+    <Compile Include="NonDispBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FMWW.ForShop\FMWW.ForShop.csproj">
+      <Project>{762d9860-218c-4feb-a5fa-6dabea305a00}</Project>
+      <Name>FMWW.ForShop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FMWW.Profile\FMWW.Profile.csproj">
+      <Project>{f2df6991-d7a9-4313-adc5-549e0cfc87df}</Project>
+      <Name>FMWW.Profile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FMWW.ScheduledArrival\FMWW.ScheduledArrival.csproj">
+      <Project>{0a123de5-8840-4a8c-9dfa-230f774a25b9}</Project>
+      <Name>FMWW.ScheduledArrival</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FMWW\FMWW.csproj">
+      <Project>{3102e484-51fd-4218-9a4d-1c0dd9a9e5c3}</Project>
+      <Name>FMWW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Text.Net\Text.csproj">
+      <Project>{0f6ba882-8777-47f4-a40a-5c8b3e8b1037}</Project>
+      <Name>Text</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\util-net\Util\Util.csproj">
+      <Project>{ed36a38e-94ba-481f-a0e7-c823bda9c059}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\SalesTransWithCSV.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FMWW\ScheduledArrival\Distribute\New\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
